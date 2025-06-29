@@ -1,0 +1,63 @@
+block variable
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        base(href="/")
+
+        // Favicon
+        link(
+            rel="icon",
+            type="image/png",
+            href="/01c308afc660380c0fc1c55e563f99d7.png"
+        )
+        // Style
+        link(rel="stylesheet", href="main.css")
+
+        title Floema
+
+        meta(
+            name="description",
+            content="Floema - A creative platform for displaying jewelry and art."
+        )
+        // SEO and social meta tags
+        meta(
+            name="keywords",
+            content="jewelry, art, creative platform, gallery, design, handmade, crafts, Floema"
+        )
+        meta(name="author", content="Floema Team")
+        meta(name="robots", content="index, follow")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="theme-color", content="#ffffff")
+        // Open Graph / Facebook
+        meta(property="og:title", content="Floema")
+        meta(
+            property="og:description",
+            content="Floema - A creative platform for displaying jewelry and art."
+        )
+        meta(property="og:type", content="website")
+        meta(property="og:url", content="https://floema.com/")
+        meta(
+            property="og:image",
+            content="/01c308afc660380c0fc1c55e563f99d7.png"
+        )
+        // Twitter Card
+        meta(name="twitter:card", content="summary_large_image")
+        meta(name="twitter:title", content="Floema")
+        meta(
+            name="twitter:description",
+            content="Floema - A creative platform for displaying jewelry and art."
+        )
+        meta(
+            name="twitter:image",
+            content="/01c308afc660380c0fc1c55e563f99d7.png"
+        )
+    body
+        include ./partials/preloader
+        include ./partials/navigation
+
+        #content.content(data-template=template)
+            block content

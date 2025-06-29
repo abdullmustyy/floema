@@ -44,7 +44,8 @@ module.exports = {
         assetFilter: function (assetFilename) {
             // Only show warnings for js and css files, exclude images
             return (
-                (assetFilename.endsWith(".js") || assetFilename.endsWith(".css")) &&
+                (assetFilename.endsWith(".js") ||
+                    assetFilename.endsWith(".css")) &&
                 !assetFilename.match(/\.(png|jpe?g|gif|svg|webp)$/i)
             );
         },
@@ -85,7 +86,10 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    { loader: MiniCssExtractPlugin.loader, options: { publicPath: "" } },
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: { publicPath: "" },
+                    },
                     { loader: "css-loader" },
                     { loader: "postcss-loader" },
                     { loader: "sass-loader" },
@@ -108,7 +112,8 @@ module.exports = {
                         loader: ImageMinimizerPlugin.loader,
                         options: {
                             minimizer: {
-                                implementation: ImageMinimizerPlugin.sharpMinify,
+                                implementation:
+                                    ImageMinimizerPlugin.sharpMinify,
                                 options: {
                                     encodeOptions: {
                                         jpeg: {
